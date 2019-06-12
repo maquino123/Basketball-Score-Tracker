@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     // - modified for a longer period of time
     // - in between button clicks
     int scoreForTeamA = 0;
+    int scoreForTeamB = 0;
 
     @Override
     //Occurs right when app starts up
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         displayForTeamA(scoreForTeamA);
+        displayForTeamB(scoreForTeamB);
     }
 
     /**
@@ -56,5 +58,42 @@ public class MainActivity extends AppCompatActivity {
     public void displayForTeamA(int score){
         TextView scoreView = findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
+    }
+
+    /******************** Team B Score ***************************/
+
+    /**
+     * Display the given score for the second team
+     * @param score
+     */
+    public void displayForTeamB(int score){
+        TextView scoreView = findViewById(R.id.team_b_score);
+        scoreView.setText(String.valueOf(score));
+    }
+
+    /**
+     * Add one point for Team B
+     * @param v
+     */
+    public void addFreeThrowForTeamB(View v){
+        scoreForTeamB = scoreForTeamB + 1;
+        displayForTeamB(scoreForTeamB);
+    }
+
+    /**
+     * Add two points for Team B
+     */
+    public void addTwoForTeamB(View v){
+        scoreForTeamB = scoreForTeamB + 2;
+        displayForTeamB(scoreForTeamB);
+    }
+
+    /**
+     * Add three points for Team B
+     * @param v
+     */
+    public void addThreeForTeamB(View v){
+        scoreForTeamB = scoreForTeamB + 3;
+        displayForTeamB(scoreForTeamB);
     }
 }
