@@ -24,6 +24,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Reset the score for both teams
+     * @param v
+     */
+    public void resetScore(View v){
+        scoreForTeamB = 0;
+        scoreForTeamA = 0;
+        displayForTeamA(scoreForTeamA);
+        displayForTeamB(scoreForTeamB);
+    }
+
+    /**
      * Increases the score for Team A by 3
      * @param v
      */
